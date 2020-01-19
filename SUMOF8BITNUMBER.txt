@@ -1,0 +1,13 @@
+2000	LDA 2050	A <- M[2050]
+2003	MOV B, A	B <- A
+2004	ANI 0F	A <- A (AND) 0F
+2006	MOV C, A	C <- A
+2007	MOV A, B	A <- B
+2008	RLC	Rotate left without carry
+2009	RLC	Rotate left without carry
+200A	RLC	Rotate left without carry
+200B	RLC	Rotate left without carry
+200C	ANI 0F	A <- A (AND) 0F
+200E	ADD C	A <- A + C
+200F	STA 3050	M[3050] <- A
+2012	HLT	END

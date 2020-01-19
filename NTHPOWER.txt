@@ -1,0 +1,21 @@
+2000H	Base		Data Byte for base
+2001H	Exponent		Data Byte for exponent
+2002H	Result		Result of factorial
+2003H		LXI H, 2000H	Load data from memory
+2006H		MOV B, M	Load base to B register
+2007H		INX H	Increment memory
+2008H		MOV C, M	Load exponent to C register
+2009H		MVI D, 01H	Set D register to 1
+200BH	POWER_LOOP	CALL MULTIPLY	Subroutine call for multiplication
+200EH		DCR C	Decrement C
+200FH		JNZ POWER_LOOP	Call power_loop till C becomes 0
+2012H		INX H	Increment memory
+2013H		MOV M, D	Store result in memory
+2014H		HLT	Halt
+2100H	MULTIPLY	MOV E, B	Transfer contents of B to E
+2101H		MVI A, 00H	Clear accumulator to store result
+2103H	MULTIPLYLOOP	ADD D	Add contents of D to A
+2104H		DCR E	Decrement E
+2105H		JNZ MULTIPLYLOOP	Repeated addition
+2108H		MOV D, A	Transfer contents of A to D
+2109H		RET	Return from subroutine

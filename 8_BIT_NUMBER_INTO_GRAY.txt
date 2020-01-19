@@ -1,0 +1,8 @@
+2000	LDA 2050	A <- M[2050]
+2003	MOV B, A	B <- A
+2004	STC	CY = 1
+2005	CMC	CY <- complement of CY
+2006	RAR	Rotate 1 bit right with carry
+2007	XRA B	A <- A XOR B
+2008	STA 3050	M[3050] <- A
+200B	HLT	End of program

@@ -1,0 +1,7 @@
+2000	LDA 2050	A <- M[2050]
+2003	RLC	Shift content of accumulator left by 1 bit without carry
+2004	RLC	Shift content of accumulator left by 1 bit without carry
+2005	RLC	Shift content of accumulator left by 1 bit without carry
+2006	RLC	Shift content of accumulator left by 1 bit without carry
+2007	STA 3050	M[2050] <- A
+200A	HLT	END
